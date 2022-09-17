@@ -1,7 +1,7 @@
 # Book_arrangement
-网址：[Alist (ics.ink)](https://alist.ics.ink/Edge01/Book_arrangement)
+预览网址：[Alist (ics.ink)](https://alist.ics.ink/Edge01/Book_arrangement)
 
-
+Github：[wasteland-institute/Book_arrangement](https://github.com/wasteland-institute/Book_arrangement)
 
 
 
