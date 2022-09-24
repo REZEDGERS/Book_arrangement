@@ -47,7 +47,7 @@ def fm_dev(rpath, tname, oldf = []): # 生成Front-matter
                                                   "/").replace("日", " ").replace("-", "/").strip()
             day = re.search(r"\d{4}/\d{1,2}(/\d{1,2})*", text)
             if day:
-                if "- " + day.group() + "\n" not in tmpl:
+                if "date: " + day.group() + "\n" not in tmpl:
                     tmpl.insert(tmpl.index(tit) + 1, "date: " + day.group() + "\n")
                 flag = 1
                 # print(tmpl)
