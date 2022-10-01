@@ -1,7 +1,8 @@
 ---
 title: README
 categories:
-- Life
+  - Life
+abbrlink: 77cd4175
 tags:
 ---
 
