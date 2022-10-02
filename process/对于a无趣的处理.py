@@ -34,7 +34,7 @@ def dev(filepath):
                 tf.writelines(fcontent)
                 tf.close()
             fname = content[r].strip().replace(":","：").replace("/","&")
-            tmfm = ["---\n", "title: " + fname + "\n", "categories:\n", "- YY向\n", "tags:\n"]
+            tmfm = ["---\n", "title: " + fname + "\n", "categories:\n", "- YY向\n", "tags:\n", "---\n"]
             ts = []
             if content[r].find("排雷") != -1:
                 lfpath = "排雷"
