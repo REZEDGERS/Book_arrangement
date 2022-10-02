@@ -45,7 +45,7 @@ def dev(filepath):
         if line.find(reg[1]) != -1:
             ts = line[3:].split('/')
             for sta in ts:
-                tmfm.insert(tmfm.index("tags:\n") + 1, "- " + sta)
+                tmfm.insert(tmfm.index("tags:\n") + 1, "- " + sta + "\n")
     # 单独处理最后一个
     fcontent = ''.join(tmfm) + "# " + fname + "\n" +''.join(content[r + 2:]) + con
     # print(fcontent)
