@@ -3,6 +3,7 @@
 按照a无趣的书写习惯转义Markdown
 """
 
+from gettext import find
 import os
 import re
 from tkinter import font
@@ -21,7 +22,7 @@ def dev(filepath):
     lfpath = '' # 具体目录是推书还是排雷
     con = "\n> 内容整理自： a无趣" # 版权
     tmfm = [] # front-matter
-    reg = [r"\*\*[一二两三四五六七八九十○零百千0-9１２３４５６７８９０]+.*", "分类"]
+    reg = [r"\*\*[一二两三四五六七八九十○零百千0-9１２３４５６７８９０]+.*", r"^分类", "分类"]
     ts = [''] # 分类
     for i in range(len(content)):
         line = content[i]
@@ -36,16 +37,23 @@ def dev(filepath):
             fname = content[r].strip().replace(":","：").replace("/","&")
             tmfm = ["---\n", "title: " + fname + "\n", "categories:\n", "- YY向\n", "tags:\n", "---\n"]
             ts = []
-            if content[r].find("排雷") != -1:
+            if fname.find("排雷") != -1:
                 lfpath = "排雷"
             else :
                 lfpath = "扫书"
             tmfm.insert(tmfm.index("tags:\n") + 1, "- " + lfpath + "\n")
             l = r
-        if line.find(reg[1]) != -1:
-            ts = line[3:].split('/')
-            for sta in ts:
-                tmfm.insert(tmfm.index("tags:\n") + 1, "- " + sta + "\n")
+        if re.search(reg[1], line.strip()):
+            ts = line.replace(reg[2], "", 1)
+            if ts.find('/') != -1:
+                ts = ts.split('/')
+            elif ts.find('，') != -1:
+                ts = ts.split('，')
+            if type(ts) == type([]):
+                for sta in ts:
+                    tmfm.insert(tmfm.index("tags:\n") + 1, "- " + sta.strip("\n :：（）?？+")+ "\n")
+            elif type(ts) == type(""):
+                tmfm.insert(tmfm.index("tags:\n") + 1, "- " + ts.strip("\n :：（）?？+") + "\n")
     # 单独处理最后一个
     fcontent = ''.join(tmfm) + "# " + fname + "\n" +''.join(content[r + 2:]) + con
     # print(fcontent)

@@ -1,12 +1,10 @@
 ---
 title: 扫书：综漫：无限ke金
 categories:
-- YY向
+  - YY向
 tags:
-- 后宫
-
-- 类:综漫
-- 扫书
+  - 扫书
+abbrlink: 5ca100e2
 ---
 # 扫书：综漫：无限ke金
 > 分类:综漫/后宫
