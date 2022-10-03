@@ -1,10 +1,11 @@
 ---
 title: 综漫：我被我画的人物追sha
 categories:
-- YY向
+  - YY向
 tags:
-- 综漫
-- 扫书
+  - 综漫
+  - 扫书
+abbrlink: bebe139d
 ---
 # 综漫：我被我画的人物追sha
 作者:梦入万界
