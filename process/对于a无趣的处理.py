@@ -20,7 +20,7 @@ def dev(filepath):
     fcontent = '' # 新内容
     fname = '' # 文件名称
     lfpath = '' # 具体目录是推书还是排雷
-    con = "\n> 内容整理自： a无趣" # 版权
+    con = "\n> 内容整理自： 微信公众号-纯爱后宫小说" # 版权
     tmfm = [] # front-matter
     reg = [r"\*\*[一二两三四五六七八九十○零百千0-9１２３４５６７８９０]+.*", r"^分类", "分类"]
     ts = [''] # 分类
@@ -34,7 +34,7 @@ def dev(filepath):
                 tf = open(gpath + '/' + lfpath + '/' + fname +'.md', 'w', encoding='utf-8')
                 tf.writelines(fcontent)
                 tf.close()
-            fname = content[r].strip().replace(":","：").replace("/","&")
+            fname = content[r].strip("* \n").replace(":","：").replace("/","&")
             tmfm = ["---\n", "title: " + fname + "\n", "categories:\n", "- YY向\n", "tags:\n", "---\n"]
             ts = []
             if fname.find("排雷") != -1:
