@@ -1,3 +1,5 @@
+# 注意：将**一百三十、** 我看这本书之前真的不知道作者是这个。我是看到看不下去之后去搜书名才发现作者是这个。 换到下面去
+
 """
 主要处理.origin
 按照a无趣的书写习惯转义Markdown
@@ -41,7 +43,7 @@ def dev(filepath):
                 tf.close()
             # 初始化
             flag = 0
-            fname = content[r].strip("* \n").replace(":","：").replace("/","&")
+            fname = "乏寂-" + content[r].strip("* \n").replace(":","：").replace("/","&")
             tmfm = ["---\n", "title: " + fname + "\n", "categories:\n", "- YY向\n", "tags:\n", "---\n"]
             ts = []
             if fname.find("排雷") != -1:
